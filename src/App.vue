@@ -1,10 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      app
-    >
+    <v-navigation-drawer v-model="drawer" fixed app>
       <v-list dense>
         <v-list-tile router :to="{name: 'home'}" exact>
           <v-list-tile-action>
@@ -29,7 +25,7 @@
       <v-toolbar-title>Application</v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <router-view/>
+      <router-view />
     </v-content>
     <v-footer color="indigo" app>
       <span class="white--text">&copy; 2017</span>
@@ -38,12 +34,12 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      drawer: null
-    }),
-    props: {
-      source: String
-    }
-  }
+export default {
+  data: () => ({
+    drawer: null,
+  }),
+  props: {
+    source: String,
+  },
+};
 </script>
