@@ -55,7 +55,11 @@ export default new Vuex.Store({
     addUser: function (context, payload) {
       const { commit } = context;
 
-      commit('addUser', payload);
+      if (payload.userId !== null) {
+        commit('addUser', payload);
+      } else {
+        console.log('Input any user id');
+      }
     }
   }
 })
