@@ -47,7 +47,9 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-
+    addUser: function (state, payload) {
+      state.users.push(payload);
+    }
   },
   actions: {
 
