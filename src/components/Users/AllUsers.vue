@@ -34,10 +34,5 @@ export default {
       percent: "percentOfSeoul",
     }),
   },
-  mounted() {
-    EventBus.$on("signUp", (user) => {
-      this.users.push(user);
-    });
-  },
 };
 </script>

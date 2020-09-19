@@ -52,6 +52,10 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    addUser: function (context, payload) {
+      const { commit } = context;
 
+      commit('addUser', payload);
+    }
   }
 })
