@@ -12,7 +12,8 @@
 
 <script>
 import { EventBus } from "@/main.js";
-import { mapMutations, mapActions } from "vuex";
+// import { mapMutations } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -25,7 +26,7 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(["addUser"]),
+    // ...mapMutations(["addUser"]),
     ...mapActions(["addUser"]),
     signUp() {
       let userObj = {

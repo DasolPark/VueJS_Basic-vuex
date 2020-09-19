@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
+  state: { // Like component's data(){ return {} }
     users: [
       {
         userId: "hoza123",
@@ -29,7 +29,7 @@ export default new Vuex.Store({
       },
     ],
   },
-  getters: {
+  getters: { // Like component's computed: {}
     countOfUsers: function (state) {
       return state.users.length;
     },
@@ -46,15 +46,15 @@ export default new Vuex.Store({
       return Math.round(getters.userOfSeoul / state.users.length * 100);
     }
   },
-  mutations: {
+  mutations: { // Just mutate
     addUser: function (state, payload) {
       state.users.push(payload);
     }
   },
-  actions: {
-    addUser: function (context, payload) {
-      const { commit } = context;
-
+  actions: { // Can add business logic
+    addUser: function ({ commit }, payload) {
+      // context, payload => {} Or
+      // { commit }, payload => {}
       if (payload.userId !== null) {
         commit('addUser', payload);
       } else {
